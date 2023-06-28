@@ -1,5 +1,5 @@
 import fs from "fs";
-import ProductManager from "./ProductManager.js";
+import { getProductById } from '../products/ProductManager.js'
 
 
 export default class CartManager {
@@ -81,7 +81,7 @@ export default class CartManager {
             return "Cart not found";
         }
 
-        const prodExists = await ProductManager.getProductById(pid);
+        const prodExists = await getProductById(pid);
         if (!prodExists) {
             return "Product not found";
         }

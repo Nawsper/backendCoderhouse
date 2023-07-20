@@ -82,7 +82,7 @@ export default class CartManager {
         }
 
         const prodExists = await getProductById(pid);
-        if (!prodExists) {
+        if (prodExists === null) {
             return "Product not found";
         }
 

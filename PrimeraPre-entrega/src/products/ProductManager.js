@@ -83,7 +83,7 @@ export const getProductById = async (id) => {
   readProducts();
   const product = arrayProd.find((product) => product.id === id);
   if (!product) {
-    return "Not found";
+    return null;
   }
   return product;
 }
@@ -95,7 +95,9 @@ export const updateProduct = async (id, updatedFields) => {
     return "Product not found";
   }
 
-  const updatedProduct = { ...arrayProd[productIndex], ...updatedFields };
+  const { id: updatedId, ...fieldsToUpdate } = updatedFields;
+
+  const updatedProduct = { ...arrayProd[productIndex], ...fieldsToUpdate };
   arrayProd[productIndex] = updatedProduct;
 
   await fs.promises.writeFile(pathFile, JSON.stringify(arrayProd));

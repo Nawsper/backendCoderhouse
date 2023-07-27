@@ -7,8 +7,9 @@ import cartsRouter from './routes/cart.routes.js'
 import { __dirname } from './utils.js';
 import handlebars from 'express-handlebars';
 import { Server } from 'socket.io';
-import messageRouter from './routes/cart.routes.js'
-import msgManager from './services/message.services.js';
+import messageRouter from './routes/message.routes.js'
+import * as msgManager from './services/message.services.js';
+
 
 
 const app = express();

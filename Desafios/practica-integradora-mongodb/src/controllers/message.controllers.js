@@ -5,6 +5,7 @@ export const getAll = async (req, res, next) => {
         const response = await service.getAll();
         res.status(200).json(response);
     } catch (error) {
+        console.log(error);
         next(error.message);
     }
 };

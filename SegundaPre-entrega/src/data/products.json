@@ -1,0 +1,428 @@
+[
+    {
+        "title": "Silla",
+        "description": "Silla de madera",
+        "price": 12345,
+        "thumbnails": [
+            "../img1.jpg"
+        ],
+        "code": "prod1",
+        "stock": 6,
+        "category": "sillas",
+        "status": true
+    },
+    {
+        "title": "Mesa",
+        "description": "Mesa de madera",
+        "price": 67890,
+        "thumbnails": [
+            "../img2.jpg"
+        ],
+        "code": "prod2",
+        "stock": 3,
+        "category": "mesas",
+        "status": true
+    },
+    {
+        "title": "Sillon",
+        "description": "Sofa esquinero",
+        "price": 45632,
+        "code": "prod3",
+        "stock": 2,
+        "category": "sillones",
+        "status": true
+    },
+    {
+        "title": "Silla Metal",
+        "description": "Silla de metal",
+        "price": 65486,
+        "thumbnails": [
+            "../img4.jpg",
+            "../img4a.jpg"
+        ],
+        "code": "prod4",
+        "stock": 16,
+        "category": "sillas",
+        "status": true
+    },
+    {
+        "title": "Mesa circular",
+        "description": "Mesa redonda",
+        "price": 84899,
+        "code": "prod5",
+        "stock": 4,
+        "category": "mesas",
+        "status": true
+    },
+    {
+        "title": "Futon",
+        "description": "Futon dos plazas",
+        "price": 44548,
+        "thumbnails": [
+            "../img6.jpg",
+            "../img6a.jpg",
+            "../img6b.jpg"
+        ],
+        "code": "prod6",
+        "stock": 5,
+        "category": "sillones",
+        "status": true
+    },
+    {
+        "title": "Mesa de luz",
+        "description": "Mesa de luz flotante",
+        "price": 12545,
+        "thumbnails": [
+            "../img7.jpg"
+        ],
+        "code": "prod7",
+        "stock": 8,
+        "category": "mesas",
+        "status": true
+    },
+    {
+        "title": "Cama niño",
+        "description": "Cama niño una plaza",
+        "price": 68484,
+        "thumbnails": [
+            "../img8.jpg"
+        ],
+        "code": "prod8",
+        "stock": 3,
+        "category": "niños",
+        "status": true
+    },
+    {
+        "title": "Alacena",
+        "description": "Alacena esquinera",
+        "price": 14849,
+        "code": "prod9",
+        "stock": 5,
+        "category": "cocina",
+        "status": true
+    },
+    {
+        "title": "Cuna bebe",
+        "description": "Cuna madera blanca",
+        "price": 48485,
+        "thumbnails": [
+            "../img10.jpg"
+        ],
+        "code": "prod10",
+        "stock": 9,
+        "category": "niños",
+        "status": true
+    },
+    {
+        "title": "Sofá",
+        "description": "Sofá de cuero",
+        "price": 38999,
+        "thumbnails": [
+            "../img11.jpg"
+        ],
+        "code": "prod11",
+        "stock": 7,
+        "category": "sillones",
+        "status": true
+    },
+    {
+        "title": "Escritorio",
+        "description": "Escritorio de madera",
+        "price": 54999,
+        "thumbnails": [
+            "../img12.jpg"
+        ],
+        "code": "prod12",
+        "stock": 12,
+        "category": "escritorios",
+        "status": true
+    },
+    {
+        "title": "Mesa ratona",
+        "description": "Mesa ratona de vidrio",
+        "price": 15999,
+        "thumbnails": [
+            "../img13.jpg"
+        ],
+        "code": "prod13",
+        "stock": 4,
+        "category": "mesas",
+        "status": true
+    },
+    {
+        "title": "Cómoda",
+        "description": "Cómoda de roble",
+        "price": 28999,
+        "thumbnails": [
+            "../img14.jpg"
+        ],
+        "code": "prod14",
+        "stock": 6,
+        "category": "dormitorio",
+        "status": true
+    },
+    {
+        "title": "Silla de oficina",
+        "description": "Silla ergonómica",
+        "price": 18999,
+        "thumbnails": [
+            "../img15.jpg"
+        ],
+        "code": "prod15",
+        "stock": 8,
+        "category": "oficina",
+        "status": true
+    },
+    {
+        "title": "Mesa de comedor",
+        "description": "Mesa de comedor extensible",
+        "price": 44999,
+        "thumbnails": [
+            "../img16.jpg"
+        ],
+        "code": "prod16",
+        "stock": 5,
+        "category": "mesas",
+        "status": true
+    },
+    {
+        "title": "Cajonera",
+        "description": "Cajonera de pino",
+        "price": 13999,
+        "thumbnails": [
+            "../img17.jpg"
+        ],
+        "code": "prod17",
+        "stock": 10,
+        "category": "dormitorio",
+        "status": true
+    },
+    {
+        "title": "Sillón reclinable",
+        "description": "Sillón reclinable de tela",
+        "price": 32999,
+        "thumbnails": [
+            "../img18.jpg"
+        ],
+        "code": "prod18",
+        "stock": 3,
+        "category": "sillones",
+        "status": true
+    },
+    {
+        "title": "Estantería",
+        "description": "Estantería de madera",
+        "price": 25999,
+        "thumbnails": [
+            "../img19.jpg"
+        ],
+        "code": "prod19",
+        "stock": 7,
+        "category": "estanterias",
+        "status": true
+    },
+    {
+        "title": "Cama doble",
+        "description": "Cama doble de hierro",
+        "price": 59999,
+        "thumbnails": [
+            "../img20.jpg"
+        ],
+        "code": "prod20",
+        "stock": 4,
+        "category": "dormitorio",
+        "status": true
+    },
+    {
+        "title": "Mesa de centro",
+        "description": "Mesa de centro moderna",
+        "price": 21999,
+        "thumbnails": [
+            "../img21.jpg"
+        ],
+        "code": "prod21",
+        "stock": 6,
+        "category": "mesas",
+        "status": true
+    },
+    {
+        "title": "Silla de comedor",
+        "description": "Silla de comedor tapizada",
+        "price": 16999,
+        "thumbnails": [
+            "../img22.jpg"
+        ],
+        "code": "prod22",
+        "stock": 8,
+        "category": "sillas",
+        "status": true
+    },
+    {
+        "title": "Armario",
+        "description": "Armario con espejo",
+        "price": 44999,
+        "thumbnails": [
+            "../img23.jpg"
+        ],
+        "code": "prod23",
+        "stock": 5,
+        "category": "dormitorio",
+        "status": true
+    },
+    {
+        "title": "Mesa de estudio",
+        "description": "Mesa de estudio con cajones",
+        "price": 32999,
+        "thumbnails": [
+            "../img24.jpg"
+        ],
+        "code": "prod24",
+        "stock": 7,
+        "category": "escritorios",
+        "status": true
+    },
+    {
+        "title": "Sofá cama",
+        "description": "Sofá cama de tela",
+        "price": 49999,
+        "thumbnails": [
+            "../img25.jpg"
+        ],
+        "code": "prod25",
+        "stock": 4,
+        "category": "sillones",
+        "status": true
+    },
+    {
+        "title": "Librero",
+        "description": "Librero de roble",
+        "price": 25999,
+        "thumbnails": [
+            "../img26.jpg"
+        ],
+        "code": "prod26",
+        "stock": 6,
+        "category": "estanterias",
+        "status": true
+    },
+    {
+        "title": "Silla ergonómica",
+        "description": "Silla ergonómica de oficina",
+        "price": 19999,
+        "thumbnails": [
+            "../img27.jpg"
+        ],
+        "code": "prod27",
+        "stock": 8,
+        "category": "oficina",
+        "status": true
+    },
+    {
+        "title": "Mesa de comedor",
+        "description": "Mesa de comedor de vidrio",
+        "price": 37999,
+        "thumbnails": [
+            "../img28.jpg"
+        ],
+        "code": "prod28",
+        "stock": 5,
+        "category": "mesas",
+        "status": true
+    },
+    {
+        "title": "Ropero",
+        "description": "Ropero de madera",
+        "price": 43999,
+        "thumbnails": [
+            "../img29.jpg"
+        ],
+        "code": "prod29",
+        "stock": 10,
+        "category": "dormitorio",
+        "status": true
+    },
+    {
+        "title": "Sillón reclinable",
+        "description": "Sillón reclinable de cuero",
+        "price": 38999,
+        "thumbnails": [
+            "../img30.jpg"
+        ],
+        "code": "prod30",
+        "stock": 3,
+        "category": "sillones",
+        "status": true
+    },
+    {
+        "title": "Librero",
+        "description": "Librero de pino",
+        "price": 18999,
+        "thumbnails": [
+            "../img31.jpg"
+        ],
+        "code": "prod31",
+        "stock": 7,
+        "category": "estanterias",
+        "status": true
+    },
+    {
+        "title": "Silla de escritorio",
+        "description": "Silla de escritorio con ruedas",
+        "price": 14999,
+        "thumbnails": [
+            "../img32.jpg"
+        ],
+        "code": "prod32",
+        "stock": 6,
+        "category": "oficina",
+        "status": true
+    },
+    {
+        "title": "Mesa de centro",
+        "description": "Mesa de centro de madera",
+        "price": 25999,
+        "thumbnails": [
+            "../img33.jpg"
+        ],
+        "code": "prod33",
+        "stock": 8,
+        "category": "mesas",
+        "status": true
+    },
+    {
+        "title": "Escritorio",
+        "description": "Escritorio de cristal",
+        "price": 33999,
+        "thumbnails": [
+            "../img34.jpg"
+        ],
+        "code": "prod34",
+        "stock": 5,
+        "category": "escritorios",
+        "status": true
+    },
+    {
+        "title": "Sofá modular",
+        "description": "Sofá modular de tela",
+        "price": 57999,
+        "thumbnails": [
+            "../img35.jpg"
+        ],
+        "code": "prod35",
+        "stock": 4,
+        "category": "sillones",
+        "status": true
+    },
+    {
+        "title": "Estantería",
+        "description": "Estantería de metal",
+        "price": 22999,
+        "thumbnails": [
+            "../img36.jpg"
+        ],
+        "code": "prod36",
+        "stock": 6,
+        "category": "estanterias",
+        "status": true
+    }
+]

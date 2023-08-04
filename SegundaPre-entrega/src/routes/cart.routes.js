@@ -9,4 +9,6 @@ router.get('/:cid', controller.getById);
 
 router.post('/:cid/products/:pid', controller.update);
 
+router.post('/add/:cid/:pid', controller.addProductToCart);
+
 export default router;

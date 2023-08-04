@@ -1,5 +1,7 @@
 import mongoose from 'mongoose';
 
+const productsCollection = 'products'
+
 const productSchema = new mongoose.Schema({
     title: { type: String, required: true, index: true },
     description: { type: String, required: true },
@@ -11,4 +13,4 @@ const productSchema = new mongoose.Schema({
     status: { type: Boolean, required: true, default: true },
 });
 
-export const ProductModel = mongoose.model('products', productSchema);
+export const ProductModel = mongoose.model(productsCollection, productSchema);

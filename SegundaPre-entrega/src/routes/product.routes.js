@@ -9,8 +9,6 @@ router.get('/:id', controller.getById);
 
 router.post('/', controller.create);
 
-router.post('/add/:cid/:pid', controller.addProductToCart);
-
 router.put('/:id', controller.update);
 
 router.delete('/:id', controller.remove);

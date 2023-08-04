@@ -30,16 +30,7 @@ export const create = async (req, res, next) => {
     }
 };
 
-export const addProductToCart = async (req, res, next) => {
-    try {
-        const { cid } = req.params;
-        const { pid } = req.params;
-        const newProdCart = service.addProductToCartService(cid, pid);
-        res.json(newProdCart);
-    } catch (error) {
-        next(error.message);
-    }
-}
+
 
 export const update = async (req, res, next) => {
     try {

@@ -1,5 +1,9 @@
 import CartDaoMongoDB from "../daos/mongodb/cart.dao.js";
+import ProductDaoMongoDB from "../daos/mongodb/product.dao.js";
+
 const cartDao = new CartDaoMongoDB();
+const productDao = new ProductDaoMongoDB();
+
 
 export const getCartByIdServices = async (cid) => {
     try {
@@ -40,3 +44,19 @@ export const updateCartServices = async (cid, pid, updatedProduct) => {
         console.log(error);
     }
 };
+
+
+export const addProductToCartService = async (cid, pid) => {
+    try {
+        const cart = await cartDao.getCartById(cid);
+        const product = await productDao.getProductById(pid);
+
+        if (!product) throw new Error("Product not found");
+        if (!cart) throw new Error("Cart not found");
+
+        const newCart = await cartDao.addProductToCart(cid, pid);
+        return newCart;
+    } catch (error) {
+        console.log(error);
+    }
+}

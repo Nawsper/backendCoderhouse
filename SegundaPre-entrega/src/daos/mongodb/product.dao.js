@@ -1,5 +1,4 @@
 import { ProductModel } from "./models/product.model.js";
-import { CartModel } from "./models/cart.model.js";
 
 export default class ProductDaoMongoDB {
     async getAllProducts() {
@@ -33,17 +32,6 @@ export default class ProductDaoMongoDB {
         try {
             const response = await ProductModel.findByIdAndUpdate(id, obj, { new: true });
             return response;
-        } catch (error) {
-            console.log(error);
-        }
-    }
-
-    async addProductToCart(cid, pid) {
-        try {
-            const cart = await CartModel.findById(cid);
-            cart.products.push(pid);
-            cart.save();
-            return cart;
         } catch (error) {
             console.log(error);
         }

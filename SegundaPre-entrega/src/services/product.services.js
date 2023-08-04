@@ -30,19 +30,6 @@ export const createProductService = async (obj) => {
     }
 }
 
-export const addProductToCartService = async (cid, pid) => {
-    try {
-        const prodExist = await prodDao.getProductById(pid);
-        if (!prodExist) {
-            throw new Error('Product not found');
-        }
-
-        const newProdCart = await prodDao.addProductToCart(cid, pid);
-        return newProdCart;
-    } catch (error) {
-        console.log(error);
-    }
-}
 
 export const updateProductService = async (id, obj) => {
     try {

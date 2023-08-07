@@ -11,10 +11,12 @@ const cartSchema = new mongoose.Schema({
                     ref: 'products'
                 },
                 quantity: { type: Number, default: 1 },
+                _id: false
             }
         ],
+
         default: []
     }
-})
+});
 
 export const CartModel = mongoose.model(cartCollection, cartSchema);

@@ -1,9 +1,35 @@
 import { ProductModel } from "./models/product.model.js";
 
 export default class ProductDaoMongoDB {
-    async getAllProducts() {
+
+    async getAllProducts(queryParams) {
         try {
-            const response = await ProductModel.find({});
+            const { limit = 10, page = 1, sort, query } = queryParams;
+
+            const options = {
+                page: parseInt(page),
+                limit: parseInt(limit),
+            };
+
+            const filter = {};
+
+            if (query) {
+                filter.category = { $regex: query, $options: "i" };
+            }
+
+            let sortOptions = {};
+
+            if (sort === "asc") {
+                sortOptions.price = 1;
+            } else if (sort === "desc") {
+                sortOptions.price = -1;
+            }
+
+            const response = await ProductModel.paginate(filter, {
+                ...options,
+                sort: sortOptions,
+            });
+
             return response;
         } catch (error) {
             console.log(error);

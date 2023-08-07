@@ -1,10 +1,11 @@
 import ProductDaoMongoDB from "../daos/mongodb/product.dao.js";
 const prodDao = new ProductDaoMongoDB();
 
-export const getAllProductsServices = async () => {
+export const getAllProductsServices = async (queryParams) => {
     try {
-        const response = await prodDao.getAllProducts();
-        return response;
+        const products = await prodDao.getAllProducts(queryParams);
+        if (!products) return false;
+        else return products
     } catch (error) {
         console.log(error);
     }

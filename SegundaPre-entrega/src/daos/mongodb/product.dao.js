@@ -4,7 +4,7 @@ export default class ProductDaoMongoDB {
 
     async getAllProducts(queryParams) {
         try {
-            const { limit = 10, page = 1, sort, query } = queryParams;
+            const { limit = 10, page = 1, sort, query, status } = queryParams;
 
             const options = {
                 page: parseInt(page),
@@ -16,6 +16,13 @@ export default class ProductDaoMongoDB {
             if (query) {
                 filter.category = { $regex: query, $options: "i" };
             }
+
+            if (status === 'available') {
+                filter.stock = { $gt: 0 };
+            } else if (status === 'unavailable') {
+                filter.stock = { $eq: 0 };
+            }
+
 
             let sortOptions = {};
 

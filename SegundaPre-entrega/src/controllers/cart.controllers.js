@@ -21,26 +21,6 @@ export const getById = async (req, res, next) => {
     }
 };
 
-export const update = async (req, res, next) => {
-    try {
-        const { cid } = req.params;
-        const cart = await service.getCartByIdServices(cid);
-        if (!cart) {
-            res.status(404).json({ message: "Cart not found" });
-        } else {
-            try {
-                const { pid } = req.params;
-                const prodUpd = await service.updateCartServices(cid, pid, req.body);
-                res.json(prodUpd);
-            } catch (error) {
-                next(error.message);
-            }
-        }
-    } catch (error) {
-        res.status(404).json({ message: error.message });
-    }
-};
-
 export const addProductToCart = async (req, res, next) => {
     try {
         const { cid } = req.params;
@@ -51,3 +31,14 @@ export const addProductToCart = async (req, res, next) => {
         next(error.message);
     }
 }
+
+export const updateCart = async (req, res, next) => {
+    try {
+        const { cid } = req.params;
+        const productsArray = req.body;
+        const updatedCart = await cartService.updateCartService(cid, productsArray);
+        res.json(updatedCart);
+    } catch (error) {
+        next(error.message);
+    }
+};

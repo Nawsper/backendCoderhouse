@@ -2,13 +2,14 @@ import * as service from "../services/product.services.js";
 
 export const getAll = async (req, res, next) => {
     try {
-        const { page = 1, limit = 10, sort, query } = req.query;
+        const { page = 1, limit = 10, sort, query, status } = req.query;
 
         const queryParams = {
             page,
             limit,
             sort,
             query,
+            status
         };
 
         const response = await service.getAllProductsServices(queryParams);

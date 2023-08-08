@@ -7,7 +7,7 @@ router.post('/', controller.create);
 
 router.get('/:cid', controller.getById);
 
-router.post('/:cid/products/:pid', controller.update);
+router.put('/:cid', controller.updateCart);
 
 router.post('/add/:cid/:pid', controller.addProductToCart);
 

@@ -60,3 +60,12 @@ export const addProductToCartService = async (cid, pid) => {
         console.log(error);
     }
 }
+
+export async function updateCartService(cid, productsArray) {
+    try {
+        const updatedCart = await cartDao.updateCart(cid, productsArray);
+        return updatedCart;
+    } catch (error) {
+        console.log(error);
+    }
+}

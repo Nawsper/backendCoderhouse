@@ -21,15 +21,6 @@ export default class CartDaoMongoDB {
         }
     }
 
-    async updateCart(cid, obj) {
-        try {
-            const response = await CartModel.findByIdAndUpdate(cid, obj, { new: true });
-            return response;
-        } catch (error) {
-            console.log(error);
-        }
-    }
-
     async addProductToCart(cid, pid) {
         try {
             const product = await ProductModel.findById(pid);
@@ -51,4 +42,65 @@ export default class CartDaoMongoDB {
             console.log(error);
         }
     };
+
+
+    async deleteProductFromCart(cid, pid) {
+        try {
+            const cart = await CartModel.findById(cid);
+            cart.products = cart.products.filter(
+                (product) => product.product.toString() !== pid
+            );
+            await cart.save();
+            return cart;
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    async updateCart(cid, productsArray) {
+        try {
+            const cart = await CartModel.findById(cid);
+
+            cart.products = [];
+
+            for (const productItem of productsArray) {
+                const product = await ProductModel.findById(productItem.product);
+                cart.products.push({
+                    product,
+                    quantity: productItem.quantity,
+                });
+            }
+
+            await cart.save();
+            return cart;
+        } catch (error) {
+            console.log(error);
+            throw error;
+        }
+    }
+    async updateQtyProductInCart(cid, pid, quantity) {
+        try {
+            const cart = await CartModel.findById(cid);
+            const productInCart = cart.products.find(
+                (product) => product.product.toString() === pid
+            );
+
+            if (productInCart) productInCart.quantity = quantity;
+
+            await cart.save();
+            return cart;
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    async deleteAllProductsFromCart(cid) {
+        try {
+            const cart = await CartModel.findByIdAndUpdate(cid, { products: [] }, { new: true });
+            return cart;
+        } catch (error) {
+            console.log(error);
+            throw error;
+        }
+    }
 }

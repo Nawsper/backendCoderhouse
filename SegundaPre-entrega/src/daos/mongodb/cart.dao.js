@@ -50,7 +50,7 @@ export default class CartDaoMongoDB {
             cart.products = cart.products.filter(
                 (product) => product.product.toString() !== pid
             );
-            await cart.save();
+            cart.save();
             return cart;
         } catch (error) {
             console.log(error);
@@ -78,6 +78,7 @@ export default class CartDaoMongoDB {
             throw error;
         }
     }
+
     async updateQtyProductInCart(cid, pid, quantity) {
         try {
             const cart = await CartModel.findById(cid);
@@ -97,6 +98,7 @@ export default class CartDaoMongoDB {
     async deleteAllProductsFromCart(cid) {
         try {
             const cart = await CartModel.findByIdAndUpdate(cid, { products: [] }, { new: true });
+
             return cart;
         } catch (error) {
             console.log(error);

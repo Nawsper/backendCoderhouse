@@ -25,27 +25,6 @@ export const createCartServices = async (obj) => {
     }
 }
 
-export const updateCartServices = async (cid, pid, updatedProduct) => {
-    try {
-        const cart = await cartDao.getCartById(cid);
-        if (!cart) return false;
-
-        const productIndex = cart.products.findIndex((item) => item.product.toString() === pid);
-
-        if (productIndex === -1) {
-            cart.products.push({ product: pid, quantity: updatedProduct.quantity });
-        } else {
-            cart.products[productIndex].quantity = updatedProduct.quantity;
-        }
-
-        const updatedCart = await cart.save();
-        return updatedCart;
-    } catch (error) {
-        console.log(error);
-    }
-};
-
-
 export const addProductToCartService = async (cid, pid) => {
     try {
         const cart = await cartDao.getCartById(cid);
@@ -54,17 +33,46 @@ export const addProductToCartService = async (cid, pid) => {
         if (!product) throw new Error("Product not found");
         if (!cart) throw new Error("Cart not found");
 
-        const newCart = await cartDao.addProductToCart(cid, pid);
-        return newCart;
+        const newProdCart = await cartDao.addProductToCart(cid, pid);
+        return newProdCart;
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+
+export const updateCartService = async (cid, productsArray) => {
+    try {
+        const updatedCart = await cartDao.updateCart(cid, productsArray);
+        return updatedCart;
     } catch (error) {
         console.log(error);
     }
 }
 
-export async function updateCartService(cid, productsArray) {
+export const updateQtyProductFromCartService = async (cid, pid, quantity) => {
     try {
-        const updatedCart = await cartDao.updateCart(cid, productsArray);
-        return updatedCart;
+        const updatedQty = await cartDao.updateQtyProductInCart(cid, pid, quantity);
+        return updatedQty;
+    } catch (error) {
+        throw error;
+    }
+};
+
+
+export const deleteProductFromCartService = async (cid, pid) => {
+    try {
+        const deleteProdCart = await cartDao.deleteProductFromCart(cid, pid);
+        return deleteProdCart;
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export const deleteAllProductFromCartService = async (cid) => {
+    try {
+        const deleteAllProdCart = await cartDao.deleteAllProductsFromCart(cid);
+        return deleteAllProdCart;
     } catch (error) {
         console.log(error);
     }

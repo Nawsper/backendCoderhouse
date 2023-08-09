@@ -23,9 +23,8 @@ export const getById = async (req, res, next) => {
 
 export const addProductToCart = async (req, res, next) => {
     try {
-        const { cid } = req.params;
-        const { pid } = req.params;
-        const newProdCart = service.addProductToCartService(cid, pid);
+        const { cid, pid } = req.params;
+        const newProdCart = await service.addProductToCartService(cid, pid);
         res.json(newProdCart);
     } catch (error) {
         next(error.message);
@@ -36,8 +35,40 @@ export const updateCart = async (req, res, next) => {
     try {
         const { cid } = req.params;
         const productsArray = req.body;
-        const updatedCart = await cartService.updateCartService(cid, productsArray);
+        const updatedCart = await service.updateCartService(cid, productsArray);
         res.json(updatedCart);
+    } catch (error) {
+        next(error.message);
+    }
+}
+
+export const updateQtyProductFromCart = async (req, res, next) => {
+    try {
+        const { cid, pid } = req.params;
+        const { quantity } = req.body;
+        const updatedQtyCart = await service.updateQtyProductFromCartService(cid, pid, Number(quantity));
+        res.json(updatedQtyCart);
+    } catch (error) {
+        next(error.message);
+    }
+};
+
+export const deleteProductFromCart = async (req, res, next) => {
+    try {
+        const { cid } = req.params;
+        const { pid } = req.params;
+        const deleteProduct = await service.deleteProductFromCartService(cid, pid);
+        res.json(deleteProduct);
+    } catch (error) {
+        next(error.message);
+    }
+}
+
+export const deleteAllProductsFromCart = async (req, res, next) => {
+    try {
+        const { cid } = req.params;
+        const deleteAllProducts = await service.deleteAllProductFromCartService(cid);
+        res.json(deleteAllProducts);
     } catch (error) {
         next(error.message);
     }

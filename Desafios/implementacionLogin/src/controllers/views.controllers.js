@@ -11,5 +11,5 @@ export const errorLogin = (req, res) => {
     res.render('errorLogin')
 }
 export const profile = (req, res) => {
-    res.render('profile')
+    res.render('products')
 }

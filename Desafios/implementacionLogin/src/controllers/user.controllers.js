@@ -17,9 +17,14 @@ export const loginUser = async (req, res) => {
         const user = await userDao.loginUser(req.body);
         if (user) {
             req.session.email = email;
-            res.redirect('/profile');
+            res.redirect('/products');
         } else res.redirect('/error-login')
     } catch (error) {
         console.log(error);
     }
 };
+
+export const logoutUser = (req, res) => {
+    req.session.destroy();
+    res.redirect("/login");
+  };

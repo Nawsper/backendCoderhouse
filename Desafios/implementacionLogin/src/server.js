@@ -2,12 +2,12 @@ import cookieParser from 'cookie-parser'
 import express from 'express'
 import handlebars from 'express-handlebars'
 import { __dirname } from './utils.js'
-import viewsRouter from './src/routes/views.routes.js'
-import userRouter from './src/routes/user.routes.js'
-import './src/config/dbConnection.js'
+import viewsRouter from './routes/views.routes.js'
+import userRouter from './routes/user.routes.js'
+import './config/dbConnection.js'
 import session from 'express-session'
 import MongoStore from 'connect-mongo'
-import { connectionString } from './src/config/dbConnection.js'
+import { connectionString } from './config/dbConnection.js'
 
 
 const app = express()

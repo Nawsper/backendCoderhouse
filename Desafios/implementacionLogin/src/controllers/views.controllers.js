@@ -1,5 +1,5 @@
 import * as service from "../services/product.services.js";
-import * as service from "../services/cart.services.js";
+import * as cartservice from "../services/cart.services.js";
 
 export const getProducts = async (req, res, next) => {
     try {
@@ -16,7 +16,8 @@ export const getProducts = async (req, res, next) => {
         const response = await service.getAllProductsServices(queryParams);
         const prevLink = response.hasPrevPage ? `http://localhost:8080/api/products?page=${response.prevPage}` : null;
         const nextLink = response.hasNextPage ? `http://localhost:8080/api/products?page=${response.nextPage}` : null;
-        res.render( 'home', {products: products.docs.map(item => item.toJSON()),
+        res.render('home', {
+            products: products.docs.map(item => item.toJSON()),
             status: 'success',
             payload: response.docs,
             totalPages: response.totalPages,
@@ -36,7 +37,7 @@ export const getProducts = async (req, res, next) => {
 export const getCart = async (req, res, next) => {
     try {
         const { cid } = req.params;
-        const response = await service.getCartByIdServices(cid);
+        const response = await cartservice.getCartByIdServices(cid);
         res.render('cart', response);
     }
     catch (error) {

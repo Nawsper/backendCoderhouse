@@ -1,3 +1,4 @@
+import session from "express-session";
 import UserDao from "../daos/user.dao.js";
 const userDao = new UserDao()
 
@@ -17,14 +18,18 @@ export const loginUser = async (req, res) => {
         const user = await userDao.loginUser(req.body);
         if (user) {
             req.session.email = email;
-            res.redirect('/products');
-        } else res.redirect('/error-login')
+            req.session.password = password
+            res.redirect('/profile');
+        } else {
+            res.redirect('/error-login');
+        }
     } catch (error) {
         console.log(error);
     }
 };
 
+
 export const logoutUser = (req, res) => {
     req.session.destroy();
     res.redirect("/login");
-  };
+};

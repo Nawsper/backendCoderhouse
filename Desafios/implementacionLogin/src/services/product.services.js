@@ -1,4 +1,4 @@
-import ProductDaoMongoDB from "../daos/mongodb/product.dao.js";
+import ProductDaoMongoDB from "../daos/product.dao.js";
 const prodDao = new ProductDaoMongoDB();
 
 export const getAllProductsServices = async (queryParams) => {

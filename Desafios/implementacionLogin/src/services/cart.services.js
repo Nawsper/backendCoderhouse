@@ -1,5 +1,5 @@
-import CartDaoMongoDB from "../daos/mongodb/cart.dao.js";
-import ProductDaoMongoDB from "../daos/mongodb/product.dao.js";
+import CartDaoMongoDB from "../daos/cart.dao.js";
+import ProductDaoMongoDB from "../daos/product.dao.js";
 
 const cartDao = new CartDaoMongoDB();
 const productDao = new ProductDaoMongoDB();
